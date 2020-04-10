@@ -1,2 +1,2 @@
 # Java
-java
+java_code
