@@ -14,6 +14,7 @@ public class Flower {
             while(temp > 0){
                 //sum = sum +(int)Math.pow((temp % 10),3);
                 sum += Math.pow((temp % 10),3);
+                //为什么这种就不用转int??????????????
                 temp = temp / 10;
             }
             if(sum == i) {
