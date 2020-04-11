@@ -12,7 +12,8 @@ public class Flower {
             temp = i;
             sum = 0;
             while(temp > 0){
-                sum = sum +(int)Math.pow((temp % 10),3);
+                //sum = sum +(int)Math.pow((temp % 10),3);
+                sum += Math.pow((temp % 10),3);
                 temp = temp / 10;
             }
             if(sum == i) {
