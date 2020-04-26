@@ -3,6 +3,8 @@
  * @author PineappleSnow
  * @version 1.0
  * @date 2020/4/24 13:17
+ *
+ * 不带头结点的单链表
  */
 
 class Node {
