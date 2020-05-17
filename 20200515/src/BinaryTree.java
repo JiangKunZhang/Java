@@ -104,5 +104,48 @@ public class BinaryTree {
         return getLeafSize2(root.left) + getLeafSize2(root.right);
     }
 
+    // 子问题思路-求第 k 层结点个数
+    int getKLevelSize(Node root, int k) {
+        if (root == null) {
+            return 0;
+        }
+        if (k == 1) {
+            return 1;
+        }
+        return getKLevelSize(root.left, k-1) + getKLevelSize(root.right,k - 1);
+    }
+
+    // 获取二叉树的高度
+    int getHeight(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(getHeight(root.left) , getHeight(root.right))  + 1;
+    }
+
+    // 查找 val 所在结点，没有找到返回 null
+    // 按照 根 -> 左子树 -> 右子树的顺序进行查找
+    // 一旦找到，立即返回，不需要继续在其他位置查找
+    Node find(Node root, char val){
+        if(root == null) {
+            return null;
+        }
+        //1、判断根节点是否是查找的数字val
+        if(root.val == val) {
+            return root;
+        }
+        //2、左边
+        Node resLeft = find(root.left, val);
+        //  递归--》左边全部递归完成后-》返回值是否是空
+        if (resLeft != null) {
+            return resLeft;
+        }
+        //3、右边
+        Node resRight = find(root.right, val);
+        if (resRight != null) {
+            return resRight;
+        }
+        return null;
+    }
 }
 
