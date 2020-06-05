@@ -1,0 +1,1 @@
+@java -cp "G:\Bit_Java\20200605\out\production\20200605" com.jiangkunzhang.MySQLClient %*
